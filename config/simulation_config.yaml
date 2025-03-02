@@ -1,0 +1,24 @@
+simulation:
+  n_centers: 41
+  n_days: 365
+  n_outages: 10
+
+delivery:
+  base_time_seconds: 60  # 1 minute base time per parcel
+  fixed_time_per_tour: 1800  # 30 minutes fixed time per tour
+  tours_per_center_mean: 20
+  tours_per_center_std: 3
+  parcels_per_tour_mean: 200
+  parcels_per_tour_std: 50
+  min_parcels_per_tour: 50
+  max_parcels_per_tour: 500
+
+routing:
+  dynamic_min_factor: 0.7  # Dynamic routing improves efficiency by 10-30%
+  dynamic_max_factor: 0.9
+  manual_min_factor: 0.7   # Manual routing is less efficient
+  manual_max_factor: 0.9   # Make it larger to be more inefficient
+
+analysis:
+  noise_factor_mean: 1.0
+  noise_factor_std: 0.1 
