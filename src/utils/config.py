@@ -49,6 +49,11 @@ class Config:
         self.DYNAMIC_ROUTING_MAX_FACTOR = config["routing"]["dynamic_max_factor"]
         self.MANUAL_ROUTING_MIN_FACTOR = config["routing"]["manual_min_factor"]
         self.MANUAL_ROUTING_MAX_FACTOR = config["routing"]["manual_max_factor"]
+        self.MANUAL_ROUTING_CROSSOVER_POINT = config["routing"]["manual_routing_crossover_point"]
+        self.MANUAL_ROUTING_SMALL_MIN_FACTOR = config["routing"]["manual_routing_small_min_factor"]
+        self.MANUAL_ROUTING_SMALL_MAX_FACTOR = config["routing"]["manual_routing_small_max_factor"]
+        self.MANUAL_ROUTING_LARGE_MIN_FACTOR = config["routing"]["manual_routing_large_min_factor"]
+        self.MANUAL_ROUTING_LARGE_MAX_FACTOR = config["routing"]["manual_routing_large_max_factor"]
         
         # Analysis parameters
         self.NOISE_FACTOR_MEAN = config["analysis"]["noise_factor_mean"]

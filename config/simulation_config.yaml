@@ -14,10 +14,19 @@ delivery:
   max_parcels_per_tour: 500
 
 routing:
-  dynamic_min_factor: 0.7  # Dynamic routing improves efficiency by 10-30%
-  dynamic_max_factor: 0.9
-  manual_min_factor: 0.7   # Manual routing is less efficient
-  manual_max_factor: 0.9   # Make it larger to be more inefficient
+  dynamic_min_factor: 0.99  # Dynamic routing improves efficiency by 10-30%
+  dynamic_max_factor: 0.99
+  # Manual routing parameters for different parcel counts
+  manual_routing_crossover_point: 200  # Parcels threshold where manual becomes worse
+  # For small parcel counts (below crossover)
+  manual_routing_small_min_factor: 0.6  # More efficient than dynamic for small counts
+  manual_routing_small_max_factor: 0.9  # Approaches neutral at crossover
+  # For large parcel counts (above crossover)
+  manual_routing_large_min_factor: 0.9  # Starts neutral at crossover
+  manual_routing_large_max_factor: 1.2  # Gets progressively worse for large counts
+  # Legacy parameters (kept for backward compatibility)
+  manual_min_factor: 0.7
+  manual_max_factor: 0.9
 
 analysis:
   noise_factor_mean: 1.0
